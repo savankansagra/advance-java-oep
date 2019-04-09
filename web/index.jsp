@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <p><center><h1>WELCOME TO E-BILLING</h1></center></p>
     <center>
-        <form method="post">
+        <form method="get" action="jsp_upload.jsp">
         Table No:<input type="number" name="tno" max="15" min="1"><br><br>
         <fieldset style="width: 190px;">
             <legend>Select Bread</legend>
