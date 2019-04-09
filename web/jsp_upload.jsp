@@ -45,10 +45,7 @@ url="jdbc:mysql://localhost:3306/oep_ajava" user="root" password="root" />
                 <sql:param value="${param.d5}" />
         </sql:update>
         <c:if test="${updatedTable>=1}">
-            <%
-                String redirectURL = "index.jsp";
-                response.sendRedirect(redirectURL);
-            %>
+                <jsp:forward page="index.jsp" />
         </c:if>
         </c:catch>
         <c:if test="${exception!=null}">
