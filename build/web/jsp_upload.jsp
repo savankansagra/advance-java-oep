@@ -1,16 +1,7 @@
-<%-- 
-    Document   : jsp_upload
-    Created on : Apr 9, 2019, 2:40:29 PM
-    Author     : KEYUR KHANT
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*" %>
 <!DOCTYPE html>
-
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
-
-
 <sql:setDataSource var="dataSource" driver="com.mysql.jdbc.Driver"
 url="jdbc:mysql://localhost:3306/oep_ajava" user="root" password="root" />
 <html>
@@ -24,12 +15,10 @@ url="jdbc:mysql://localhost:3306/oep_ajava" user="root" password="root" />
         <c:catch var="exception">    
         <sql:update dataSource="${dataSource}" var="updatedTable">
         INSERT INTO resto VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        
         <c:if test="${param.tno == null}">
             <h1>Please Enter Table Number</h1>
             <jsp:forward page="index.jsp" />
         </c:if>
-        
         <c:if test="${param.tno != null}">
                 <sql:param value="${param.tno}" />       
                 
