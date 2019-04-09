@@ -41,6 +41,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<!--\n");
       out.write("To change this license header, choose License Headers in Project Properties.\n");
@@ -60,7 +61,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        Table No:<input type=\"number\" name=\"tno\" max=\"15\" min=\"1\"><br><br>\n");
       out.write("        <fieldset style=\"width: 190px;\">\n");
       out.write("            <legend>Select Bread</legend>\n");
-      out.write("        Bread:<input style=\"width: 28px;\" type=\"number\" name=\"b1\"><br><br>\n");
+      out.write("            Bread:<input style=\"width: 28px;\" type=\"number\" name=\"b1\"><br><br>\n");
       out.write("        Chapati:<input style=\"width: 28px;\" type=\"number\" name=\"b2\"><br><br>\n");
       out.write("        Butter Chapati:<input style=\"width: 28px;\" type=\"number\" name=\"b3\"><br><br>\n");
       out.write("        Tandoori Roti:<input style=\"width: 28px;\" type=\"number\" name=\"b4\"><br><br>\n");
@@ -82,13 +83,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        Pepsi:<input style=\"width: 28px;\" type=\"number\" name=\"d4\"><br><br>\n");
       out.write("        Mazza:<input style=\"width: 28px;\" type=\"number\" name=\"d5\"><br><br>\n");
       out.write("        </fieldset><br><br>\n");
-      out.write("        <a href=\"/OneServlet\" name=\"go\">GO</a><br><br>\n");
-      out.write("        <center>OR</center><br>\n");
-      out.write("        <input type=\"submit\" name=\"bill\" value=\"MAKE BILL\">\n");
+      out.write("        <input type=\"submit\" name=\"go\" value=\"GO\"><br><br>\n");
       out.write("    </form>\n");
+      out.write("        <center>OR</center><br>\n");
+      out.write("        <form action=\"jsp_bill.jsp\" method=\"GET\">\n");
+      out.write("            Table No:<input type=\"number\" name=\"tno\" max=\"15\" min=\"1\"><br><br>\n");
+      out.write("            Name:<input type=\"text\" name=\"name\"><br><br>\n");
+      out.write("            Email:<input type=\"email\" name=\"email\"><br><br>\n");
+      out.write("            <input type=\"submit\" name=\"bill\" value=\"MAKE BILL\">\n");
+      out.write("        </form>\n");
       out.write("    </center>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
