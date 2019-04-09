@@ -26,23 +26,106 @@ url="jdbc:mysql://localhost:3306/oep_ajava" user="root" password="root" />
         <sql:update dataSource="${dataSource}" var="updatedTable">
         INSERT INTO resto VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         
-            
-                <sql:param value="${param.tno}" />                
-                <sql:param value="${param.b1}" />
-                <sql:param value="${param.b2}" />
-                <sql:param value="${param.b3}" />
-                <sql:param value="${param.b4}" />    
-                <sql:param value="${param.v1}" />                
-                <sql:param value="${param.v2}" />
-                <sql:param value="${param.v3}" />
-                <sql:param value="${param.v4}" />
-                <sql:param value="${param.v5}" />    
-                <sql:param value="${param.v6}" />                
-                <sql:param value="${param.d1}" />
-                <sql:param value="${param.d2}" />
-                <sql:param value="${param.d3}" />
-                <sql:param value="${param.d4}" />
-                <sql:param value="${param.d5}" />
+        <c:if test="${param.tno == null}">
+            <h1>Please Enter Table Number</h1>
+            <jsp:forward page="index.jsp" />
+        </c:if>
+        
+        <c:if test="${param.tno != null}">
+                <sql:param value="${param.tno}" />       
+        
+                <c:if test="${param.b1 != null}">
+                    <sql:param value="${param.b1}" />
+                </c:if>
+                <c:if test="${param.b1 == null}">
+                    ${param.b1 = 0};
+                    <sql:param value="${param.b1}" />
+                </c:if>
+                    
+                <c:if test="${param.b2 != null}">
+                    <sql:param value="${param.b2}" />
+                </c:if>
+                <c:if test="${param.b2 == null}">
+                    ${param.b2 = 0};
+                    <sql:param value="${param.b1}" />
+                </c:if>       
+                    
+                <c:if test="${param.b3 != null}">
+                    <sql:param value="${param.b3}" />
+                </c:if>
+                <c:if test="${param.b3 == null}">
+                    ${param.b3 = 0};
+                    <sql:param value="${param.b3}" />
+                </c:if>                
+                    
+                <c:if test="${param.b4 != null}">
+                    <sql:param value="${param.b4}" />
+                </c:if>
+                <c:if test="${param.b4 == null}">
+                    ${param.b4 = 0};
+                    <sql:param value="${param.b4}" />
+                </c:if>               
+                    
+                <c:if test="${param.v1 != null}">
+                    <sql:param value="${param.v1}" />
+                </c:if>
+                <c:if test="${param.v1 == null}">
+                    ${param.v1 = 0};
+                    <sql:param value="${param.v1}" />
+                </c:if>                
+                    
+                <c:if test="${param.v2 != null}">
+                    <sql:param value="${param.v2}" />
+                </c:if>
+                <c:if test="${param.v2 == null}">
+                    ${param.v2 = 0};
+                    <sql:param value="${param.v2}" />
+                </c:if>                    
+                
+                <c:if test="${param.v3 != null}">
+                    <sql:param value="${param.v3}" />
+                </c:if>
+                <c:if test="${param.v3 == null}">
+                    ${param.v3 = 0};
+                    <sql:param value="${param.v3}" />
+                </c:if>
+                    
+                <c:if test="${param.v4 != null}">
+                    <sql:param value="${param.v4}" />
+                </c:if>
+                <c:if test="${param.v4 == null}">
+                    ${param.v4 = 0};
+                    <sql:param value="${param.v4}" />
+                </c:if>
+                    
+                <c:if test="${param.v5 != null}">
+                    <sql:param value="${param.v5}" />
+                </c:if>
+                <c:if test="${param.v5 == null}">
+                    ${param.v5 = 0};
+                    <sql:param value="${param.v5}" />
+                </c:if>    
+                    
+                <c:if test="${param.v6 != null}">
+                    <sql:param value="${param.v6}" />
+                </c:if>
+                <c:if test="${param.v6 == null}">
+                    ${param.v6 = 0};
+                    <sql:param value="${param.v6}" />
+                </c:if>    
+                    
+                <c:if test="${param.d1 != null}">
+                    <sql:param value="${param.d1}" />
+                </c:if>
+                <c:if test="${param.d1 == null}">
+                    ${param.d1 = 0};
+                    <sql:param value="${param.d1}" />
+                </c:if>
+                    
+                    
+                    
+                    
+        </c:if>        
         </sql:update>
         <c:if test="${updatedTable>=1}">
                 <jsp:forward page="index.jsp" />
